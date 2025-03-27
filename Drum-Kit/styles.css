@@ -1,0 +1,46 @@
+*{
+ box-sizing: border-box;
+}
+body{
+    background-size: 100%;
+
+}
+.key{
+border: 1px solid black;
+padding : 5px;
+width: 50px;
+height: 50px;
+border-radius: 6px;
+text-align: center;
+background: transparent;
+transition: all 0.07s;
+text-shadow: 0 0 3px rgb(156, 151, 151);
+}
+.play{
+    transform: scale(1.1);
+    border-color: aquamarine;
+    box-shadow: 0 0 10px grey;
+}
+.keyd{
+padding: 5px;
+display: flex;
+gap: 5px;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+kbd{
+    color: aqua;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+}
+.key:hover{
+    background-color: rgba(0,0,0,4);
+}
+span{
+    color: bisque;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    font-size: medium;
+}

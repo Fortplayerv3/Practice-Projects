@@ -9,26 +9,31 @@
     <body>
         <script src="drum.js" defer></script>
         <div class="keyd">
-            <div class="key">
+            <div data-key="KeyA" class="key">
                 <kbd>A</kbd>
                 <span class="sound">clap</span>
             </div>
-            <div class="key">
+            <div data-key="KeyS" class="key">
                 <kbd>S</kbd>
                 <span class="sound">kick</span>
             </div>
-            <div class="key">
+            <div data-key="KeyD" class="key">
                 <kbd>D</kbd>
                 <span class="sound">boom</span>
             </div>
-            <div class="key">
+            <div data-key="KeyF" class="key">
                 <kbd>F</kbd>
                 <span class="sound">tom</span>
             </div>
-            <div class="key">
+            <div data-key="KeyG" class="key">
                 <kbd>G</kbd>
                 <span class="sound">ride</span>
             </div>
         </div>
+        <audio data-key="KeyA" src="sounds/clap.wav"></audio>
+        <audio data-key="KeyS" src="sounds/kick.wav"></audio>
+        <audio data-key="KeyD" src="sounds/boom.wav"></audio>
+        <audio data-key="KeyF" src="sounds/tom.wav"></audio>
+        <audio data-key="KeyG" src="sounds/tink.wav"></audio>
     </body>
 </html>

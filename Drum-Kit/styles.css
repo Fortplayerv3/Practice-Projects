@@ -1,6 +1,11 @@
 *{
  box-sizing: border-box;
 }
+html{
+    font-size: 10px;
+    background: url('./background.jpg') bottom center;
+    background-size: cover;
+}
 body{
     background-size: 100%;
 
@@ -15,11 +20,6 @@ text-align: center;
 background: transparent;
 transition: all 0.07s;
 text-shadow: 0 0 3px rgb(156, 151, 151);
-}
-.play{
-    transform: scale(1.1);
-    border-color: aquamarine;
-    box-shadow: 0 0 10px grey;
 }
 .keyd{
 padding: 5px;
@@ -43,4 +43,9 @@ span{
     font-weight: bold;
     font-family:'Times New Roman', Times, serif;
     font-size: medium;
+}
+.playing{
+    transform: scale(1.1);
+    border-color: blanchedalmond;
+    box-shadow: 0 0 10px blanchedalmond;
 }

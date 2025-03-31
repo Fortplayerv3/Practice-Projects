@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+html{
+   font-size: 10px;
+}
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    flex: 1;
+    min-height: 100vh;
+}
+.clock{
+    height: 30rem;
+    width: 32rem;
+    border-radius: 50%;
+    outline: 20px solid whitesmoke;
+    margin: 0px auto;
+    position: relative;
+    box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+     }
+     .hand{
+        width: 50%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        top: 50%;
+     }

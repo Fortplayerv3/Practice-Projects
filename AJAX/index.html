@@ -1,0 +1,57 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles.css">
+        <title>Type Head</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form id="searching" class="search-form">
+            <input type="text" class="search" placeholder="City or State">
+            <ul class="suggestions">
+                <li>Filter for a City</li>
+                <li>or a State</li>
+            </ul>
+        </form>
+        <script>
+            const endpoint= 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+            const cities=[];
+            fetch(endpoint)
+            .then(blob=> blob.json())
+            .then(data=> cities.push(...data));
+
+            function findMatches(cities, wordToMatch){
+                return cities.filter(place => {
+                    //Variable in a Regular Expression(Imp.)
+                    const regex = new RegExp(wordToMatch, 'gi');
+                    return place.city.match(regex) || place.state.match(regex)
+                });
+            }
+            function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+         
+function displayMatches() {
+  const matchArray = findMatches(cities, this.value);
+  const html = matchArray.map(place => {
+    const regex = new RegExp(this.value, 'gi');
+    const cityHl = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+    const stateHl = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+    return `
+      <li>
+        <span class="name">${cityHl}, ${stateHl}</span>
+        <span class="population">${numberWithCommas(place.population)}</span>
+      </li>
+    `;
+  }).join('');
+  suggestions.innerHTML = html;
+}
+            const searchInput= document.querySelector('.search');
+            const suggestions= document.querySelector('.suggestions');
+
+            searchInput.addEventListener('input', displayMatches);
+            
+
+        </script>
+    </body>
+</html>
